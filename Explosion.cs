@@ -21,12 +21,11 @@ public class Explosion : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         velocity = other.transform.GetComponent<Rigidbody>().velocity.y;
-        Debug.Log(velocity);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(velocity <= -1.5)
+        if(velocity <= -2.5f)
         {
             collision.rigidbody.AddForce(new Vector3(0, -velocity * 0.9f, 0), ForceMode.Impulse);
         }
